@@ -20,3 +20,4 @@ const engineerQuestions = [
     message: "Enter the engineer's github Username",
   },
 ];
+module.exports = engineerQuestions;

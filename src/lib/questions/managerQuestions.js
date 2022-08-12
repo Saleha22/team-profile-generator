@@ -20,3 +20,4 @@ const managerQuestions = [
     message: "Enter the team managers office number",
   },
 ];
+module.exports = managerQuestions;

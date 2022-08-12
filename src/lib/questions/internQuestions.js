@@ -20,3 +20,4 @@ const internQuestions = [
     message: "Enter the intern's school",
   },
 ];
+module.exports = internQuestions;
