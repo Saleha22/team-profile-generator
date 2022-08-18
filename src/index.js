@@ -58,8 +58,8 @@ const init = async () => {
       employees.intern.push(intern);
     }
   }
-  console.log(managerAnswers);
-  console.log(employees);
+  //console.log(managerAnswers);
+  //console.log("employees", employees);
   generateHTML(employees);
 };
 init();
