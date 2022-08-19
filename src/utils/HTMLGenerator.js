@@ -38,12 +38,34 @@ const generateHTML = ({ manager, engineer, intern }) => {
     `;
   };
 
+  const generateIntern = (eachIntern) => {
+    return `
+    <div class="card employee-card">
+    <div class="card-header">
+        <h2 class="card-title">${eachIntern.name}</h2>
+        <h3 class="card-title" >Intern</h3>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item">ID: ${eachIntern.employeeId}</li>
+            <li class="list-group-item">Email: <a href="mailto:${eachIntern.email}">${eachIntern.email}</a></li>
+            <li class="list-group-item"> School: ${eachIntern.school}</li>
+        </ul>
+    </div>
+</div>
+    `;
+  };
+
   const cards = manager.map((eachManager) => {
     return generateManager(eachManager);
   });
 
   const engineerCards = engineer.map((eachEngineer) => {
     return generateEngineer(eachEngineer);
+  });
+
+  const internCards = intern.map((eachIntern) => {
+    return generateIntern(eachIntern);
   });
 
   const html = `
@@ -57,7 +79,7 @@ const generateHTML = ({ manager, engineer, intern }) => {
     <title>My Team</title>
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://kit.fontawesome.com/c502137733.js"></script>
 </head>
 
@@ -71,12 +93,19 @@ const generateHTML = ({ manager, engineer, intern }) => {
     </div>
     <div class="container">
         <div class="row">
-            <div class="team-area col-12 d-flex justify-content-center">
+            <div class="team-area col-12 d-flex justify-content-around">
                 ${cards.join("")}
                 ${engineerCards.join("")}
+                ${internCards.join("")}
+
             </div>
         </div>
     </div>
+ <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
 </body>
 
 
